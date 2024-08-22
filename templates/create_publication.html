@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{%load crispy_forms_tags %}
+{% block page_header %}
+{% endblock page_header %}
+{% block main_content %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Criar Publicação</h1>
+                <div class="my-5">
+                    <form method='POST' enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br />
+                        <button class="btn btn-primary text-uppercase" type="submit">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock main_content %}

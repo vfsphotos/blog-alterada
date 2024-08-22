@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{% load static %}
+{% block page_header %}
+<header class="masthead" style="background-image: url({% static 'assets/img/post-bg.jpg' %})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>{{ publication.pub_title }}</h1>
+                    <span class="meta">
+                        Postado por
+                        <a href="#!">{{ publication.author }}</a>
+                        em {{publication.date_pub}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock page_header %}
+{% block main_content %}
+<!-- Post Content-->
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {{publication.pub_text|linebreaks}}
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock main_content %}        

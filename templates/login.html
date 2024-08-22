@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+{%load crispy_forms_tags%}
+{% block page_header %}
+{% endblock page_header %}
+{% block main_content %}
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Login</h1>
+                <div class="my-5">
+                    <form method='POST'>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <a href="#">esqueci a senha</a>
+                        <a href="{% url 'register' %}">cadastrar-se</a>
+                        </div>
+                        <br />
+                        <button class="btn btn-primary text-uppercase" type="submit">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock main_content %}
